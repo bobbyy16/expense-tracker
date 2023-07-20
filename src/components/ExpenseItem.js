@@ -1,13 +1,17 @@
 import React from 'react'
 import '../styles/ExpenseItem.css'
-export default function ExpenseItem() {
+import ExpenseDate from './ExpenseDate';
+export default function ExpenseItem(props) {
+
+
     return (
-        <div className="expense-item">
-            <div>March 28th 2023</div>
-            <div className="expense-item__description">
-                <h2>Bike Insurance</h2>
-                <div className="expense-item__price">1600</div>
+        <div className='expense-item'>
+            <ExpenseDate date={props.date}/>
+            <div className='expense-item__description'>
+                <h2>{props.title}</h2>
+                <div className='expense-item__price'>{props.amount}</div>
             </div>
         </div>
-    )
+    );
 }
+  
